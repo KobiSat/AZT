@@ -1,0 +1,15 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "virtualMachines_ksVMnew_name": {
+            "value": null
+        },
+        "disks_ksVMnew_OsDisk_1_460a29715c27418082b092051ecc0795_externalid": {
+            "value": null
+        },
+        "networkInterfaces_ksvmnew532_z1_externalid": {
+            "value": null
+        }
+    }
+}

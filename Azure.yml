@@ -1,0 +1,48 @@
+trigger:
+  branches:
+    include:
+      - main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+  - task: AzureResourceManagerTemplateDeployment@3
+    displayName: 'ResourceDeployment'
+    inputs:
+      deploymentScope: 'Resource Group'
+      azureResourceManagerConnection: 'MSEC_Candidates_Homeworks'
+      subscriptionId: 'a8108c2b-496c-424d-8347-ecc8afb6384c'
+      action: 'Create Or Update Resource Group'
+      resourceGroupName: 'homework'
+      location: 'Central US '
+      templateLocation: 'Linked artifact'
+      csmFile: 'C:\Users\ASUS\Documents\Azure Task\StorgeAccountsARMTemplate.json'
+      overrideParameters: 'C:\Users\ASUS\Documents\Azure Task\ksstrg1.parameters.json'
+
+  - task: AzureResourceManagerTemplateDeployment@3
+    displayName: 'ResourceDeployment'
+    inputs:
+      deploymentScope: 'Resource Group'
+      azureResourceManagerConnection: 'MSEC_Candidates_Homeworks'
+      subscriptionId: 'a8108c2b-496c-424d-8347-ecc8afb6384c'
+      action: 'Create Or Update Resource Group'
+      resourceGroupName: 'homework'
+      location: 'Central US '
+      templateLocation: 'Linked artifact'
+      csmFile: 'C:\Users\ASUS\Documents\Azure Task\StorgeAccountsARMTemplate.json'
+      overrideParameters: 'C:\Users\ASUS\Documents\Azure Task\ksstrg2.parameters.json'
+
+- task: AzureResourceManagerTemplateDeployment@3
+    displayName: 'ResourceDeployment'
+    inputs:
+      deploymentScope: 'Resource Group'
+      azureResourceManagerConnection: 'MSEC_Candidates_Homeworks'
+      subscriptionId: 'a8108c2b-496c-424d-8347-ecc8afb6384c'
+      action: 'Create Or Update Resource Group'
+      resourceGroupName: 'homework'
+      location: 'Central US '
+      templateLocation: 'Linked artifact'
+      csmFile: 'C:\Users\ASUS\Documents\Azure Task\ksVMtemplate.json'
+      overrideParameters: 'C:\Users\ASUS\Documents\Azure Task\ksVM.parameters.json'
+    
